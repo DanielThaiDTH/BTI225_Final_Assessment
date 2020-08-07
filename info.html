@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Daniel Thai</title>
+    <link rel="stylesheet" href="./normalize.css">
+    <script src="info.js"></script>
+</head>
+<body>
+
+<header>
+    <div id="logo">
+        <img src="./images/logo.bmp" alt="Web Programming Logo">
+    </div>
+    <h1 id="title">
+        User Information Form
+    </h1>
+</header>
+<nav>
+
+</nav>
+<main>
+    <div id="content">
+        <form action="https://httpbin.org/post" name="signup" method="POST">
+            <label>First name: </label>
+            <input type="text" name="fName" id="FirstName" required>
+            <br>
+
+            <label>Laste name: </label>
+            <input type="text" name="lName" id="LastName" required>
+            <br>
+
+            <label>Password: </label>
+            <input type="password" name="password" id="Password" required>
+            <br>
+
+            <label>Username: </label>
+            <input type="text" name="username" id="Username" required>
+            <br>
+
+            <label>Education Level: </label>
+            <select name="edLvl" id="EdLevel" required>
+                <option value="0">- select -</option>
+                <option value="Technical">Technical Diploma</option>
+                <option value="College">College Diploma</option>
+                <option value="Bachelor">Bachelor's Diploma</option>
+                <option value="Master">Master's Degree</option>
+                <option value="Other">Other</option>
+            </select><br>
+            <span>Education Status: </span>
+            <br>
+
+            <input type="radio" name="gradStatus" id="Grad" value="grad">
+            <label for="Grad">Graduated</label>
+            <input type="radio" name="gradStatus" id="Enrolled" value="enrolled">
+            <label for="Enrolled">Enrolled</label>
+            <input type="radio" name="gradStatus" id="NotGrad" value="nongrad">
+            <label for="NotGrad">Did Not Graduate</label>
+            <br>
+
+            <label>Email: </label>
+            <input type="email" name="email" id="Email" required>
+            <br>
+
+            <label>Age: </label>
+            <input type="number" name="age" id="Age" min="18" max="60" required>
+            <br>
+            <input type="hidden" name="lastName" id="lastName" value="Thai">
+            <input type="hidden" name="studentId" id="studentId" value="151900198">
+        </form>
+    </div>
+    <div id="side">
+
+    </div>
+</main>
+<footer>
+    <div>
+        <p>&copy; Daniel Thai 2020</p>
+    </div>
+</footer>
+
+</body>
+</html>
