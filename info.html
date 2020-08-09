@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./normalize.css">
     <script src="info.js"></script>
 </head>
-<body>
+<body id="errorpanel">
 
 <header>
     <div id="logo">
@@ -16,35 +16,46 @@
         User Information Form
     </h1>
 </header>
-<nav>
-
-</nav>
+    
 <main>
+    <div id="nav">
+        <ul>
+            <li>
+                <a href="./honesty.html">Welcome</a>
+            </li>
+            <li>
+                <a href="./info.html">User Information Form</a>
+            </li>
+            <li>
+                <a href="./reflection.html">Reflection</a>
+            </li>
+        </ul>
+    </div>
     <div id="content">
-        <form action="https://httpbin.org/post" name="signup" method="POST">
+        <form action="https://httpbin.org/post" name="signup" method="POST" onsubmit="return formValidate(this);">
             <label>First name: </label>
-            <input type="text" name="fName" id="FirstName" required>
+            <input type="text" name="fName" id="FirstName">
             <br>
 
             <label>Laste name: </label>
-            <input type="text" name="lName" id="LastName" required>
+            <input type="text" name="lName" id="LastName">
             <br>
 
             <label>Password: </label>
-            <input type="password" name="password" id="Password" required>
+            <input type="password" name="password" id="Password">
             <br>
 
             <label>Retype Password: </label>
-            <input type="password" name="re_password" id="Re_Password" required>
+            <input type="password" name="re_password" id="Re_Password">
             <br>
 
             <label>Username: </label>
-            <input type="text" name="username" id="Username" required>
+            <input type="text" name="username" id="Username">
             <br>
 
             <label>Education Level: </label>
             <select name="edLvl" id="EdLevel" required>
-                <option value="0">- select -</option>
+                <option value="0" selected>- select -</option>
                 <option value="Technical">Technical Diploma</option>
                 <option value="College">College Diploma</option>
                 <option value="Bachelor">Bachelor's Diploma</option>
@@ -60,6 +71,7 @@
             <label for="Enrolled">Enrolled</label>
             <input type="radio" name="gradStatus" id="NotGrad" value="nongrad">
             <label for="NotGrad">Did Not Graduate</label>
+            <input type="radio" name="gradStatus" id="Hidden" value="none" checked class="hidden">
             <br>
 
             <label>Email: </label>
@@ -78,7 +90,24 @@
         </form>
     </div>
     <div id="side">
+        <h3>
 
+        </h3>
+        <p>
+
+        </p>
+        <p>
+
+        </p>
+        <p>
+
+        </p>
+        <p>
+
+        </p>
+        <p>
+
+        </p>
     </div>
 </main>
 <footer>

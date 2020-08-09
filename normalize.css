@@ -3,6 +3,7 @@ body {
     margin: 0 0;
     text-align: center;
 }
+
 header {
     background-color: rgb(245, 195, 87);
     display: flex;
@@ -18,9 +19,22 @@ header {
     height: auto;
 }
 
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+#nav {
+    text-align: left;
+}
+
 #content {
-    margin: 10px 25vw;
+    margin: 10px 25vw 10px 20vw;
     text-align: justify;
+}
+
+.hidden {
+    visibility: collapse;
 }
 
 footer {
