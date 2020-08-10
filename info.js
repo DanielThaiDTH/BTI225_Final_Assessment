@@ -9,9 +9,9 @@ window.onload = function(){
     //Deletion/Modification of side panel depending on page (only kept in info page)
     //Link to current page is styled bold
     if (isInfoPage) {
-        var statusTitle = document.querySelector("#side").querySelector("h3");
-        var titleText = document.createTextNode("Submission Status");
-        statusTitle.appendChild(titleText);
+        //var statusTitle = document.querySelector("#side").querySelector("h3");
+        //var titleText = document.createTextNode("Submission Status");
+        //statusTitle.appendChild(titleText);
         document.querySelector("#info-link").setAttribute("style", "font-weight:bold;");
     } else {
         var sidepanel = document.querySelector("#side");

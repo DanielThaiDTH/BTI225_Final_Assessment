@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Daniel Thai</title>
     <link rel="stylesheet" href="./normalize.css">
     <script src="info.js"></script>
@@ -59,8 +60,8 @@
 
                 <!-- "- select -" is not a valid option, formValidate ensures another is selected -->
                 <label>Education Level: </label>
-                <select name="edLvl" id="EdLevel" required>
-                    <option value="0" selected>- select -</option>
+                <select name="edLvl" id="EdLevel">
+                    <option value="0">- select -</option>
                     <option value="Technical">Technical Diploma</option>
                     <option value="College">College Diploma</option>
                     <option value="Bachelor">Bachelor's Diploma</option>
@@ -102,7 +103,7 @@
     <!-- Validation messages are placed here using info.js -->
     <div id="side">
         <h3>
-
+            Submission Status
         </h3>
         <p id="success"></p>
         <p id="name_error"> </p>
