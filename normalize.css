@@ -14,6 +14,13 @@ header {
     border-radius: 30px;
 }
 
+#logo img{
+    max-width: 150px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+}
+
 #title {
     font-size: 3.5em;
     color: brown;
@@ -41,10 +48,18 @@ main {
     border-width: 2px;
 }
 
+a {
+    text-decoration-line: none;
+}
+
 #nav ul li {
     margin: 5px 0;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+#nav ul li:hover {
+    background-color: rgb(218, 231, 231);
 }
 
 h3 {
@@ -128,6 +143,10 @@ h3 {
     margin-right: 10px;
 }
 
+#success {
+    color: green;
+}
+
 .hidden {
     visibility: collapse;
 }
@@ -147,6 +166,20 @@ footer div {
     /* grid-column: 2; */
     width: fit-content;
     margin: 10px auto;
+    padding: 10px;
     color: brown;
     text-align: left;
+}
+
+footer div p {
+    margin: 10px auto;
+}
+
+footer div p a:any-link {
+    color: brown;
+    padding: 5px;
+}
+
+footer div p a:hover {
+    background-color: rgb(228, 175, 62);
 }

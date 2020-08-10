@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="./normalize.css">
     <script src="info.js"></script>
 </head>
-<body id="errorpanel">
+<body id="info">
 
 <header>
     <div id="logo">
-        <img src="./images/logo.bmp" alt="Web Programming Logo">
+        <img src="./images/logo.png" alt="Web Programming Logo">
     </div>
     <h1 id="title">
         User Information Form
@@ -22,19 +22,19 @@
         <h3>Links</h3>
         <ul>
             <li>
-                <a href="./honesty.html">Welcome</a>
+                <a href="./honesty.html" id="welcome-link">Welcome</a>
             </li>
             <li>
-                <a href="./info.html">User Information Form</a>
+                <a href="./info.html" id="info-link">User Information Form</a>
             </li>
             <li>
-                <a href="./reflection.html">Reflection</a>
+                <a href="./reflection.html" id="reflect-link">Reflection</a>
             </li>
         </ul>
     </div>
     <div id="content">
         
-        <form action="https://httpbin.org/post" name="signup" id="signup" method="POST" onsubmit="return formValidate(this);">
+        <form action="https://httpbin.org/post" name="signup" id="signup" method="POST" onsubmit="return formValidate(this);" onreset="highlightReset();">
             <fieldset>
                 <legend>Sign-up</legend>
                 <label>First name: </label>
@@ -98,7 +98,7 @@
         <h3>
 
         </h3>
-        <p id=""></p>
+        <p id="success"></p>
         <p id="name_error"> </p>
         <p id="pass_error"></p>
         <p id="username_error"></p>
@@ -108,6 +108,7 @@
 </main>
 <footer>
     <div>
+        <p><a href="">My GitHub Page</a></p>
         <p>&copy; Daniel Thai 2020</p>
     </div>
 </footer>

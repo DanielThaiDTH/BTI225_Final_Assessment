@@ -1,32 +1,27 @@
 window.onload = function(){
 
     var pagetype = document.querySelector("body").id
-    var isInfoPage = pagetype === "errorpanel";
-    var isNoSide = pagetype === "no_errorpanel";
+    var isInfoPage = pagetype === "info";
+    var isReflect = pagetype === "reflect";
+    var isWelcome = pagetype === "welcome";
 
     if (isInfoPage) {
         var statusTitle = document.querySelector("#side").querySelector("h3");
         var titleText = document.createTextNode("Submission Status");
         statusTitle.appendChild(titleText);
-    } 
-    
-    if (isNoSide) {
+        document.querySelector("#info-link").setAttribute("style", "font-weight:bold;");
+    } else {
         var sidepanel = document.querySelector("#side");
         document.querySelector("body main").removeChild(sidepanel);
     }
-    /*firstnameCheck = function() {
-        var fnamefield = document.querySelector("#LastName");
-        var fname = fnamefield.getAttribute("value");
 
-        return nameValid(fname);
-    };
+    if (isReflect) 
+        document.querySelector("#reflect-link").setAttribute("style", "font-weight:bold;");
+    
+    if (isWelcome)
+        document.querySelector("#welcome-link").setAttribute("style", "font-weight:bold;");
 
-    lastnameCheck = function() {
-        var lnamefield = document.querySelector("#LastName");
-        var lname = lnamefield.getAttribute("value");
 
-        return nameValid(lname);
-    };*/
 
     nameValid = function(fieldvalue) {
         var check = /^[A-Z][A-Za-z]{0,5}/;
@@ -34,17 +29,8 @@ window.onload = function(){
         return check.test(fieldvalue);
     };
 
-    /*passCheck = function() {
-        var passfield = document.querySelector("#Password");
-        var passfield2 = document.querySelector("#Re_Password");
-
-        return passfield.getAttribute("value") === passfield2.getAttribute("value") && passValid();
-    };*/
-
 
     passValid = function(password) {
-        /*var passfield = document.querySelector("#Password");
-        var password = passfield.getAttribute("value");*/
         var bStart = false;
         var rAlpha = /^[A-Za-z]/;
         var bUpper = false;
@@ -77,14 +63,25 @@ window.onload = function(){
     };
 
 
-    displayError = function(locID, msg) {
+    displayMsg = function(locID, msg) {
         msgLoc = document.querySelector("#" + locID);
 
         msgLoc.innerHTML = msg;
     };
 
 
-    clearErrors = function() {
+    fieldHighlight = function(locID) {
+        document.querySelector(locID).setAttribute("style","background-color:#fd9b9b;");
+    }
+
+
+    highlightReset = function() {
+        var fields = document.querySelectorAll("input, select");
+        fields.forEach(ele=>ele.setAttribute("style","background-color:white;"));
+    }
+
+
+    clearMsgs = function() {
         errors = document.querySelectorAll("#side p");
         errors.forEach(ele=>ele.innerHTML = "");
     };
@@ -93,24 +90,33 @@ window.onload = function(){
     formValidate = function(formdata) {
         var test = true;
 
-        clearErrors();
+        clearMsgs();
+        highlightReset();
 
         //Name field check
-        if (!nameValid(formdata.fName.value) || !nameValid(formdata.lName.value)) {
+        var fNamePass = nameValid(formdata.fName.value);
+        var lNamePass = nameValid(formdata.lName.value)
+        if (!fNamePass || !lNamePass) {
             var nameEmpty = false;
 
             if (formdata.fName.value.length == 0) {
+                fieldHighlight("#FirstName");
                 nameEmpty = true;
             }
 
             if (formdata.lName.value.length == 0) {
+                fieldHighlight("#LastName");
                 nameEmpty = true;
             }
 
             if (!nameEmpty) {
-                displayError("name_error", "Names should start with a capital letter and should only contain alphabetical letters.");
+                displayMsg("name_error", "Names should start with a capital letter and should only contain alphabetical letters.");
+                if (!fNamePass)
+                    fieldHighlight("#FirstName");
+                if (!lNamePass)
+                    fieldHighlight("#LastName");
             } else {
-                displayError("name_error", "Missing name.");
+                displayMsg("name_error", "Missing name.");
             }
 
             test = false;
@@ -122,46 +128,57 @@ window.onload = function(){
                 var passEmpty = false;
 
                 if (formdata.password.value.length == 0) {
+                    fieldHighlight("#Password");
                     passEmpty = true;
                 }
     
                 if (formdata.re_password.value.length == 0) {
+                    fieldHighlight("#Re_Password");
                     passEmpty = true;
                 }
 
                 if (!passEmpty) {
-                    displayError("pass_error", "Passwords should be 6 letters long and contain at least 1 number and 1 capital letter.");
+                    fieldHighlight("#Re_Password");
+                    fieldHighlight("#Password");
+                    displayMsg("pass_error", "Passwords should be 6 letters long and contain at least 1 number and 1 capital letter.");
                 } else {
-                    displayError("pass_error", "Password not entered.");
+                    displayMsg("pass_error", "Password not entered.");
                 }
                 
                 test = false;
             } 
         } else {
-            displayError("pass_error", "The passwords given do not match.");
+            fieldHighlight("#Re_Password");
+            displayMsg("pass_error", "The passwords given do not match.");
             test = false;
         }
 
         //Username Check
         if (!usernameCheck(formdata.username.value)) {
+            fieldHighlight("#Username");
             if (formdata.username.value.length != 0) {
-                displayError("username_error", "Valid usernames should be at least 6 characters long and start with an alphabetical character.");
+                displayMsg("username_error", "Valid usernames should be at least 6 characters long and start with an alphabetical character.");
             } else {
-                displayError("username_error", "Username is required.");
+                displayMsg("username_error", "Username is required.");
             }
             test = false;
         }
 
         //Education level check
         if (formdata.edLvl.value === "0") {
-            displayError("edlvl_error", "Please select your education level.");
+            fieldHighlight("#EdLevel");
+            displayMsg("edlvl_error", "Please select your education level.");
             test = false;
         }
 
         //Graduation Status check
         if (formdata.gradStatus.value === "none") {
-            displayError("grad_error", "Select your education status.");
+            displayMsg("grad_error", "Select your education status.");
             test = false;
+        }
+
+        if (test) {
+            displayMsg("success", "Form submission was successful.");
         }
 
         return test;
