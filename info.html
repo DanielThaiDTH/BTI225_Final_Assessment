@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>Daniel Thai</title>
     <link rel="stylesheet" href="./normalize.css">
     <script src="info.js"></script>
@@ -19,6 +19,7 @@
     
 <main>
     <div id="nav">
+        <h3>Links</h3>
         <ul>
             <li>
                 <a href="./honesty.html">Welcome</a>
@@ -32,82 +33,77 @@
         </ul>
     </div>
     <div id="content">
-        <form action="https://httpbin.org/post" name="signup" method="POST" onsubmit="return formValidate(this);">
-            <label>First name: </label>
-            <input type="text" name="fName" id="FirstName">
-            <br>
+        
+        <form action="https://httpbin.org/post" name="signup" id="signup" method="POST" onsubmit="return formValidate(this);">
+            <fieldset>
+                <legend>Sign-up</legend>
+                <label>First name: </label>
+                <input type="text" name="fName" id="FirstName">
+                <br>
 
-            <label>Laste name: </label>
-            <input type="text" name="lName" id="LastName">
-            <br>
+                <label>Last name: </label>
+                <input type="text" name="lName" id="LastName">
+                <br>
 
-            <label>Password: </label>
-            <input type="password" name="password" id="Password">
-            <br>
+                <label>Password: </label>
+                <input type="password" name="password" id="Password">
+                <br>
 
-            <label>Retype Password: </label>
-            <input type="password" name="re_password" id="Re_Password">
-            <br>
+                <label>Retype Password: </label>
+                <input type="password" name="re_password" id="Re_Password">
+                <br>
 
-            <label>Username: </label>
-            <input type="text" name="username" id="Username">
-            <br>
+                <label>Username: </label>
+                <input type="text" name="username" id="Username">
+                <br>
 
-            <label>Education Level: </label>
-            <select name="edLvl" id="EdLevel" required>
-                <option value="0" selected>- select -</option>
-                <option value="Technical">Technical Diploma</option>
-                <option value="College">College Diploma</option>
-                <option value="Bachelor">Bachelor's Diploma</option>
-                <option value="Master">Master's Degree</option>
-                <option value="Other">Other</option>
-            </select><br>
-            <span>Education Status: </span>
-            <br>
+                <label>Education Level: </label>
+                <select name="edLvl" id="EdLevel" required>
+                    <option value="0" selected>- select -</option>
+                    <option value="Technical">Technical Diploma</option>
+                    <option value="College">College Diploma</option>
+                    <option value="Bachelor">Bachelor's Diploma</option>
+                    <option value="Master">Master's Degree</option>
+                    <option value="Other">Other</option>
+                </select><br><br>
 
-            <input type="radio" name="gradStatus" id="Grad" value="grad">
-            <label for="Grad">Graduated</label>
-            <input type="radio" name="gradStatus" id="Enrolled" value="enrolled">
-            <label for="Enrolled">Enrolled</label>
-            <input type="radio" name="gradStatus" id="NotGrad" value="nongrad">
-            <label for="NotGrad">Did Not Graduate</label>
-            <input type="radio" name="gradStatus" id="Hidden" value="none" checked class="hidden">
-            <br>
+                <span>Education Status: </span>
+                <br>
+                <input type="radio" name="gradStatus" id="Grad" value="grad">
+                <label for="Grad" class="radiolabel">Graduated</label>
+                <input type="radio" name="gradStatus" id="Enrolled" value="enrolled">
+                <label for="Enrolled" class="radiolabel">Enrolled</label>
+                <input type="radio" name="gradStatus" id="NotGrad" value="nongrad">
+                <label for="NotGrad" class="radiolabel">Did Not Graduate</label>
+                <input type="radio" name="gradStatus" id="Hidden" value="none" checked class="hidden">
+                <br>
 
-            <label>Email: </label>
-            <input type="email" name="email" id="Email" required>
-            <br>
+                <label>Email: </label>
+                <input type="email" name="email" id="Email" required>
+                <br>
 
-            <label>Age: </label>
-            <input type="number" name="age" id="Age" min="18" max="60" required>
-            <br>
-            <input type="hidden" name="lastName" id="lastName" value="Thai">
-            <input type="hidden" name="studentId" id="studentId" value="151900198">
-            <br>
+                <label>Age: </label>
+                <input type="number" name="age" id="Age" min="18" max="60" placeholder="18 - 60" required>
+                <br>
+                <input type="hidden" name="lastName" id="lastName" value="Thai">
+                <input type="hidden" name="studentId" id="studentId" value="151900198">
+                <br>
 
-            <button type="submit">Submit</button> &nbsp;
-            <button type="reset">Clear</button>
+                <button type="submit">Submit</button> &nbsp;
+                <button type="reset">Clear</button>
+            </fieldset>
         </form>
     </div>
     <div id="side">
         <h3>
 
         </h3>
-        <p>
-
-        </p>
-        <p>
-
-        </p>
-        <p>
-
-        </p>
-        <p>
-
-        </p>
-        <p>
-
-        </p>
+        <p id=""></p>
+        <p id="name_error"> </p>
+        <p id="pass_error"></p>
+        <p id="username_error"></p>
+        <p id="edlvl_error"></p>
+        <p id="grad_error"></p>
     </div>
 </main>
 <footer>

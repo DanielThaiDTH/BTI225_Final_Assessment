@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>Daniel Thai</title>
     <link rel="stylesheet" href="./normalize.css">
+    <script src="info.js"></script>
 </head>
-<body>
+<body id="no_errorpanel">
 
 <header>
     <div id="logo">
@@ -30,7 +31,44 @@
         </ul>
     </div>
     <div id="content">
+        <p>
+            An important concept of web design is Responsive Design. Through research on the web, I learned that it is a concept in which 
+            a website is designed to <span class="italic">respond</span> to the capabilities and needs of the user/device. My research also 
+            showed that this concept was first defined by Ethan Marcotte (web.dev, May 2020). It terms of website behaviour, Responsive Design means that the 
+            layout of a page changes accoring to the size and orientation of a display. By using Responsive Design, a web page can be displayed 
+            on desktops, mobile phones, and tablets without distortion of the content and preserving readability in all cases. By adding the 
+            attribute name with value "viewport" and an attribute content with value "width=device-width, initial-scale=1", the content can 
+            be properly scaled to the screen. "viewport" sets the viewport so that the content attribute can work. The "device-width" makes 
+            the page match the screen width of the device and the "initial-scale=1" makes it so that 1 pixel in CSS matches 1 device independent 
+            pixel (web.dev, May 2020). CSS is the main way to design a web page so that it is responsive. Instead of using exact sizes like px, a relative size 
+            should be used for the dimensions like width and height. An example is using a percent in the width of an element. If it is 50%, 
+            the width of the element will be 50% of its container. If the whole document is styled like this, then the width of the content 
+            will adjust automatically to the size of the screen. CSS provides further layout methods like flexbox, where the content is 
+            adjusted automatically to fit despite differing sizes, grid, where a grid can be created to place content exactly where needed and 
+            column, where the content is displayed in columns. There is also the CSS @media feature that can query the device specifications
+            like display width, pointer style, etc. This can allow us to set breakpoints at certain screen sizes so that a more proper layout 
+            can be used in certain cases where the original layout is insufficient for that size. CSS is very powerful and allows us to implement 
+            the useful concept of Responsive Design. <br> <br>
 
+            During this course, I have learned about the basics of web programming. Web programming consists of three fundamental technologies, 
+            HTML, CSS and JavaScript. HTML or HyperText Markup Language is a way to create content for a web page by just using a text document. 
+            HTML allows text and media to be displayed on the page and it also has information about the page. CSS or Cascading Style Sheets is 
+            a way to style the display of the webpage. It allows elements within the page to adjusted based on their size, layout, color and 
+            many more ways. Styling can be done as attributes of individual elements, or it can be placed within style tags to modify the whole 
+            document. A separate .css file can also contain this styling and the advantage is that it can be used to make multiple pages share 
+            the same styling, as long as a link element contains a reference to it. However, HTML is only static and CSS has limited runtime 
+            capabilities, so to have a page modify itself during runtime, JavaScript is needed. JavaScript is an object-oriented programming 
+            language that is interpreted. However, the syntax is similar to C so the familiarity with C made it easier to learn about. 
+            JavaScript is run by the browser and can query and modify the HTML document. The link between HTML, CSS and JavaScript is through 
+            the framework of DOM or document object model. The HTML document is represented by a DOM tree, where each element is considered a node.
+            DOM allows JavaScript and CSS to understand how to find the elements in the HTML document. Elements can be considered objects in 
+            JavaScript, which makes it easy to manipulate them in that language. Overall, this course has taught me alot about web programming. 
+            I went from knowing nothing about making a website to being able to create a functioning web page with styling and dynamic functioning. 
+        </p>
+        <h4>References</h4>
+        <p class="ref">
+            Web.dev. (May 14, 2020). <span class="italic">Responsive web design basics.</span> Retrieved August 9, 2020, from &nbsp;&nbsp;&nbsp; https://web.dev/responsive-web-design-basics/
+        </p>
     </div>
     <div id="side">
 

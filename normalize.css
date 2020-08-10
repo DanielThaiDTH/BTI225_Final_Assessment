@@ -2,35 +2,130 @@ body {
     background-color: rgb(110, 170, 238);
     margin: 0 0;
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.1em;
 }
 
 header {
     background-color: rgb(245, 195, 87);
     display: flex;
     flex-direction: row;
+    padding: 15px;
+    border-radius: 30px;
 }
 
 #title {
-    font-size: 4em;
+    font-size: 3.5em;
     color: brown;
     font-family: 'Delicious Heavy', 'Lucidia Sans', Arial, Helvetica, sans-serif;
     text-align: center;
-    width: 100%;
+    width: 100vw;
     height: auto;
 }
 
 main {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 
 #nav {
     text-align: left;
+    min-width: 20vw;
+    height: auto;
+    padding: 10px;
+    margin: 10px 3px;
+    background-color: azure;
+    border-style: solid;
+    border-color: rgb(66, 98, 99);
+    border-width: 2px;
+}
+
+#nav ul li {
+    margin: 5px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+h3 {
+    font-size: 1.3em;
+    margin: 5px 10px;
 }
 
 #content {
-    margin: 10px 25vw 10px 20vw;
+    margin: 10px 5% 10px 5%;
+    padding: 20px;
+    min-width: 36.3636vw; /*ratio: 400px for fit, 1100px design, ratio is 0.363636*/
+    height: auto;
     text-align: justify;
+    background-color: azure;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(66, 98, 99);
+}
+
+#content p {
+    text-indent: 5%;
+    line-height: 140%;
+}
+
+#content p.ref {
+    text-indent: 0;
+    line-height: 140%;
+}
+
+#signup {
+    text-align: left;
+}
+
+#signup fieldset {
+    background-color: rgb(207, 243, 231);
+    font-size: 1.1em;
+}
+
+#signup fieldset button{
+    font-size: 0.9em;
+}
+
+#signup fieldset legend {
+    background-color: white;
+    padding: 2px;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Franklin Gothic', Helvetica, sans-serif;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#signup fieldset input, #signup fieldset select option {
+    margin: 10px 0;
+}
+
+#signup fieldset .radiolabel {
+    margin-right: 8px;
+    font-size: 0.85em;
+}
+
+.italic {
+    font-style: italic;
+}
+
+#side {
+    margin: 10px 30px;
+    text-align: left;
+    background-color: azure;
+    height: fit-content;
+    border-style: groove;
+    border-radius: 3px;
+}
+
+#side h3 {
+    text-align: center;
+}
+
+#side p {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .hidden {
@@ -38,16 +133,20 @@ main {
 }
 
 footer {
-    display: grid;
-    grid-template-columns: repeat(3, 33.33%);
+    /* display: grid;
+    grid-template-columns: repeat(3, 33.33%); */
     align-content: center;
     text-align: center;
-    background-color: #da0030;
+    background-color: rgb(245, 195, 87);
     height: 100%;
-    width: 100%
+    width: 100%;
+    border-radius: 30px;
 }
 
 footer div {
-    grid-column: 2;
+    /* grid-column: 2; */
+    width: fit-content;
+    margin: 10px auto;
+    color: brown;
     text-align: left;
 }
