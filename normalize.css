@@ -1,17 +1,21 @@
 body {
-    background-color: rgb(110, 170, 238);
+    background-color: rgb(173, 226, 247);
     margin: 0 0;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.1em;
 }
 
+/* Header Styling ********************************************** */
 header {
-    background-color: rgb(245, 195, 87);
+    background-color: rgb(245, 195, 87); 
     display: flex;
     flex-direction: row;
     padding: 15px;
     border-radius: 30px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(179, 60, 5);
 }
 
 #logo img{
@@ -23,22 +27,38 @@ header {
 
 #title {
     font-size: 3.5em;
-    color: brown;
+    color: rgb(131, 6, 27);
     font-family: 'Delicious Heavy', 'Lucidia Sans', Arial, Helvetica, sans-serif;
     text-align: center;
     width: 100vw;
     height: auto;
 }
+/* *********************************************************** */
 
+
+/* Remove link underlines */
+a {
+    text-decoration-line: none;
+}
+
+/* Main Body ************************************************ */
 main {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
+/* Panel Headers */
+h3 {
+    font-size: 1.3em;
+    margin: 5px 10px;
+}
+
+/* Navigation Panel Styling ************ */
 #nav {
     text-align: left;
     min-width: 20vw;
+    min-height: 65vh;
     height: auto;
     padding: 10px;
     margin: 10px 3px;
@@ -48,10 +68,7 @@ main {
     border-width: 2px;
 }
 
-a {
-    text-decoration-line: none;
-}
-
+/* Navigation List Styling ***** */
 #nav ul li {
     margin: 5px 0;
     text-overflow: ellipsis;
@@ -61,17 +78,15 @@ a {
 #nav ul li:hover {
     background-color: rgb(218, 231, 231);
 }
+/* ************************* */
+/* ********************************** */
 
-h3 {
-    font-size: 1.3em;
-    margin: 5px 10px;
-}
-
+/* Content Panel Styling ************ */
 #content {
     margin: 10px 5% 10px 5%;
     padding: 20px;
     min-width: 36.3636vw; /*ratio: 400px for fit, 1100px design, ratio is 0.363636*/
-    height: auto;
+    height: min-content;
     text-align: justify;
     background-color: azure;
     border-style: solid;
@@ -79,6 +94,7 @@ h3 {
     border-color: rgb(66, 98, 99);
 }
 
+/* Adjusting line size for clarity, indent for paragraphs */
 #content p {
     text-indent: 5%;
     line-height: 140%;
@@ -89,6 +105,7 @@ h3 {
     line-height: 140%;
 }
 
+/* Form Styling ********** */
 #signup {
     text-align: left;
 }
@@ -112,6 +129,7 @@ h3 {
     border-width: 1px;
 }
 
+/* Input field sizing */
 #signup fieldset input, #signup fieldset select option {
     margin: 10px 0;
 }
@@ -121,10 +139,18 @@ h3 {
     font-size: 0.85em;
 }
 
+/* Hidden default radio button */
+.hidden {
+    visibility: collapse;
+}
+/* ************************* */
+
 .italic {
     font-style: italic;
 }
+/* ********************************** */
 
+/* Side Panel Styling ************** */
 #side {
     margin: 10px 30px;
     text-align: left;
@@ -138,36 +164,37 @@ h3 {
     text-align: center;
 }
 
+/* Message Text margins */
 #side p {
     margin-left: 10px;
     margin-right: 10px;
 }
 
+/* Success Message color */
 #success {
     color: green;
 }
+/* ********************************** */
+/* *********************************************************** */
 
-.hidden {
-    visibility: collapse;
-}
-
+/* Footer ************************************************ */
 footer {
-    /* display: grid;
-    grid-template-columns: repeat(3, 33.33%); */
     align-content: center;
     text-align: center;
     background-color: rgb(245, 195, 87);
     height: 100%;
     width: 100%;
     border-radius: 30px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(179, 60, 5);
 }
 
 footer div {
-    /* grid-column: 2; */
     width: fit-content;
     margin: 10px auto;
     padding: 10px;
-    color: brown;
+    color: rgb(131, 6, 27);
     text-align: left;
 }
 
@@ -176,7 +203,7 @@ footer div p {
 }
 
 footer div p a:any-link {
-    color: brown;
+    color: rgb(131, 6, 27);
     padding: 5px;
 }
 

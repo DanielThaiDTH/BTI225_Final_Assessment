@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./normalize.css">
     <script src="info.js"></script>
 </head>
-<body id="info">
+<body id="info"> <!-- id for page identification -->
 
 <header>
     <div id="logo">
@@ -33,7 +33,7 @@
         </ul>
     </div>
     <div id="content">
-        
+        <!-- Validates form with formValidate function before submission, Error highlights cleared on clicking reset -->
         <form action="https://httpbin.org/post" name="signup" id="signup" method="POST" onsubmit="return formValidate(this);" onreset="highlightReset();">
             <fieldset>
                 <legend>Sign-up</legend>
@@ -57,6 +57,7 @@
                 <input type="text" name="username" id="Username">
                 <br>
 
+                <!-- "- select -" is not a valid option, formValidate ensures another is selected -->
                 <label>Education Level: </label>
                 <select name="edLvl" id="EdLevel" required>
                     <option value="0" selected>- select -</option>
@@ -67,6 +68,8 @@
                     <option value="Other">Other</option>
                 </select><br><br>
 
+                <!-- Radio input with class hidden is hidden and and default selected -->
+                <!-- Validation checks if gradStatus is not none to ensure user selects one option -->
                 <span>Education Status: </span>
                 <br>
                 <input type="radio" name="gradStatus" id="Grad" value="grad">
@@ -78,10 +81,12 @@
                 <input type="radio" name="gradStatus" id="Hidden" value="none" checked class="hidden">
                 <br>
 
+                <!-- HTML5 validation -->
                 <label>Email: </label>
                 <input type="email" name="email" id="Email" required>
                 <br>
 
+                <!-- HTML5 validation -->
                 <label>Age: </label>
                 <input type="number" name="age" id="Age" min="18" max="60" placeholder="18 - 60" required>
                 <br>
@@ -94,6 +99,7 @@
             </fieldset>
         </form>
     </div>
+    <!-- Validation messages are placed here using info.js -->
     <div id="side">
         <h3>
 
